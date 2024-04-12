@@ -78,3 +78,8 @@ Other DB:
 - https://en.wikipedia.org/wiki/Glass_databases
 - https://glassproperties.com/databases/
 
+Intresting websites:
+- https://next-gen.materialsproject.org/
+- https://oqmd.org/
+
+
