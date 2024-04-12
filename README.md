@@ -26,3 +26,53 @@ ML good for structured data!
 Great Algorithm for ML(strucured data) -> Gradient Boosted Machine (XGBoost)
 
 Turning patterns into numbers
+
+
+Types of ML Algoriths best suited for strucured data:
+- Random Forrest etc
+
+
+"The following list of glass database contents is not complete, and it may not be up to date.
+For full features see the references section below.
+All databases contain citations to the original data sources and the chemical composition of the glasses or ceramics."						
+
+
+SciGlass: (https://www.akoscheminformatics.de/sciglass/sciglass.htm)
+
+-Viscosity
+-Density
+-Mechanical Prop
+-Optical Prop
+-Thermal Prop
+-Elecrtrical Pop
+-Chemical Durability
+-Liqudius Temperatures
+-Crystallization char.
+-Ternary diagrams of glass formation
+-Glass Prop Calculation Methods
+-Patent and Trademark index
+-Subject Index
+
+
+Interglad: (https://www.newglass.jp/interglad_n/gaiyo/info_e.html)
+
+-Viscosiry
+-Density
+-Mechanical Prop
+-Optical Prop
+-Electrical Pop
+-Statistical Analysis
+-Liquidus Temperatures
+-Ternary Property Diagrams
+
+Phase Equilibria Diagrams:
+
+-Phase Diagrams
+-Liquidus and Solidus Temp.
+-Eutectic points
+-Crystaline Phase
+-Primary Crystaline Phase
+
+
+Other DB - https://glassproperties.com/databases/
+
