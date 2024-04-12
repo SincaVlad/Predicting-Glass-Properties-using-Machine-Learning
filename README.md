@@ -37,7 +37,7 @@ For full features see the references section below.
 All databases contain citations to the original data sources and the chemical composition of the glasses or ceramics."						
 
 
-SciGlass: (https://www.akoscheminformatics.de/sciglass/sciglass.htm)
+SciGlass: (https://www.akoscheminformatics.de/sciglass/sciglass.htm)/(https://github.com/epam/SciGlass)
 
 -Viscosity
 -Density
