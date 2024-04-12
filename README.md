@@ -74,5 +74,7 @@ Phase Equilibria Diagrams:
 -Primary Crystaline Phase
 
 
-Other DB - https://glassproperties.com/databases/
+Other DB:
+- https://en.wikipedia.org/wiki/Glass_databases
+- https://glassproperties.com/databases/
 
