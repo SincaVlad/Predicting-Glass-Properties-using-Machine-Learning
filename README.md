@@ -1,85 +1,53 @@
-# Disertation
+# Predicting Glass Transition Temperature Using Machine Learning
 
+This repository contains the code and data used in my dissertation on predicting the glass transition temperature (Tg) of glass materials using various machine learning techniques. The project includes data preprocessing, model training, and optimization, as well as the evaluation of model performance.
 
-Machine learning is turning things(data) [images, text, tabels of numbers, video, audio, etc] into numbers and finding patterns in those numbers.
+## Overview
 
-Finding patterns is the computer (algorithm) job
+In this project, I utilized a dataset of approximately 29,000 glass compositions, derived from the SciGlass database, to predict the glass transition temperature (Tg) using machine learning algorithms such as Random Forest, Gradient Boosting, and Support Vector Regression. The best-performing model was optimized and evaluated using various metrics, with results indicating significant potential for the application of machine learning in materials science.
 
-Algorithm = code that executes math
+## Files and Directories
 
-AI(ML(DL))
+- **data/**
+  - `glass_data.csv`: The processed dataset used for training and evaluation.
+  - `original_data_reference.md`: Reference to the original SciGlass database and instructions on how to access it.
 
+- **scripts/**
+  - `data_preprocessing.py`: Python script for data preprocessing.
+  - `model_training.py`: Script for training and evaluating machine learning models.
+  - `model_optimization.py`: Script for optimizing model hyperparameters using Randomized Search.
+  - `model_evaluation.py`: Script for final model evaluation and generating plots.
+  - **utils/**: Contains utility scripts for data handling and visualization.
 
-Noraml programming:
+- **results/**
+  - `model_performance.csv`: CSV file with model performance results (MSE, R², etc.).
+  - `learning_curves.png`: Learning curve plot.
+  - `feature_importance.png`: Feature importance plot.
+  - **predictions/**: Contains prediction examples for new glass compositions.
 
-Inputs + Rules = Output
+## How to Use
 
-ML Programming:
+1. **Data Preprocessing**:
+   - Run `data_preprocessing.py` to prepare the dataset.
 
-Supervised learning (figure out the relationship between input/output)
-Inputs + Outputs = Rules
+2. **Model Training**:
+   - Run `model_training.py` to train the machine learning models.
 
-ML Scope is to find out the rules (relationship betewwwn input/output)
+3. **Model Optimization**:
+   - Use `model_optimization.py` to optimize model hyperparameters.
 
-ML good for structured data!
+4. **Model Evaluation**:
+   - Run `model_evaluation.py` to evaluate the model and generate visualizations.
 
-Great Algorithm for ML(strucured data) -> Gradient Boosted Machine (XGBoost)
+## Dataset
 
-Turning patterns into numbers
+The dataset used in this project is derived from the SciGlass database. Due to licensing restrictions, the raw data is not included in this repository. Please refer to `data/original_data_reference.md` for more information on accessing the original data.
 
+## License
 
-Types of ML Algoriths best suited for strucured data:
-- Random Forrest etc
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
+## Acknowledgements
 
-"The following list of glass database contents is not complete, and it may not be up to date.
-For full features see the references section below.
-All databases contain citations to the original data sources and the chemical composition of the glasses or ceramics."						
-
-
-SciGlass: (https://www.akoscheminformatics.de/sciglass/sciglass.htm) / (https://github.com/epam/SciGlass)
-
--Viscosity
--Density
--Mechanical Prop
--Optical Prop
--Thermal Prop
--Elecrtrical Pop
--Chemical Durability
--Liqudius Temperatures
--Crystallization char.
--Ternary diagrams of glass formation
--Glass Prop Calculation Methods
--Patent and Trademark index
--Subject Index
-
-
-Interglad: (https://www.newglass.jp/interglad_n/gaiyo/info_e.html)
-
--Viscosiry
--Density
--Mechanical Prop
--Optical Prop
--Electrical Pop
--Statistical Analysis
--Liquidus Temperatures
--Ternary Property Diagrams
-
-Phase Equilibria Diagrams:
-
--Phase Diagrams
--Liquidus and Solidus Temp.
--Eutectic points
--Crystaline Phase
--Primary Crystaline Phase
-
-
-Other DB:
-- https://en.wikipedia.org/wiki/Glass_databases
-- https://glassproperties.com/databases/
-
-Intresting websites:
-- https://next-gen.materialsproject.org/
-- https://oqmd.org/
-
-
+- The original dataset is provided by the SciGlass database.
+- This project is part of my master's dissertation at [Your University Name].
