@@ -1,7 +1,9 @@
 import joblib
+import os
 
-# Încărcarea modelului salvat
-best_rf = joblib.load('Optimized Random Forrest Model.joblib')
+# Încărcarea modelului salvat din directorul specificat
+model_path = os.path.join('results', 'model_optimization_results', 'Optimized_RandomForest_Model.joblib')
+best_rf = joblib.load(model_path)
 
 # Definirea unei noi compoziții ca dicționar
 tested_composition = {
@@ -26,6 +28,12 @@ tested_composition = {
     "P2O5": 0
 }
 
+# Verificarea dacă suma compozițiilor este egală cu 100%
+total_composition = sum(tested_composition.values())
+
+if total_composition != 100:
+    raise ValueError(f"Suma compozițiilor trebuie să fie egală cu 100%. Suma actuală este {total_composition:.2f}%")
+    
 # Pregătirea compoziției pentru predicție - doar valorile
 composition_values = list(tested_composition.values())
 
