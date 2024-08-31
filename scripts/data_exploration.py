@@ -1,19 +1,30 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
+import time
 
-# Încărcarea setului de date
-df = pd.read_csv('Glass Data.csv')
+# Încărcarea setului de date din locația specificată
+data_path = 'data/glass_data.csv'
+try:
+    df = pd.read_csv(data_path)
+except FileNotFoundError:
+    print(f"Eroare: Fișierul '{data_path}' nu a fost găsit.")
+    raise
 
 # Variabila pentru salvarea graficelor
-save_plots = True
+save_plots = True  # Setează la False pentru a afișa graficele în loc să le salvezi
+
+# Crearea directorului pentru salvarea rezultatelor, dacă nu există
+results_dir = 'results/data_exploration_results/'
+os.makedirs(results_dir, exist_ok=True)
 
 # Setarea stilului grafic
 plt.style.use('ggplot')
 
 # Generarea histogramelor pentru fiecare componentă chimică
 for column in df.columns[:-1]:  # Exclude Tg
-    data = df[df[column] != 0][column]
+    data = df[df[column] != 0][column]  # Excluderea valorilor de 0 din calcul
     mean = data.mean()
 
     plt.figure(figsize=(14, 6))
@@ -29,7 +40,8 @@ for column in df.columns[:-1]:  # Exclude Tg
     plt.tight_layout()
 
     if save_plots:
-        plt.savefig(f'{column[3:]}_Histograma.png', dpi=300)
+        timestamp = time.strftime("%Y%m%d-%H%M%S")
+        plt.savefig(os.path.join(results_dir, f'{column[3:]}_Histograma_{timestamp}.png'), dpi=300)
         plt.close()
     else:
         plt.show()
@@ -49,7 +61,8 @@ plt.legend()
 plt.tight_layout()
 
 if save_plots:
-    plt.savefig('TG_Histograma_Standard.png', dpi=300)
+    timestamp = time.strftime("%Y%m%d-%H%M%S")
+    plt.savefig(os.path.join(results_dir, f'TG_Histograma_Standard_{timestamp}.png'), dpi=300)
     plt.close()
 else:
     plt.show()
@@ -67,7 +80,8 @@ plt.ylabel('Număr de compoziții')
 plt.tight_layout()
 
 if save_plots:
-    plt.savefig('component_counts.png', dpi=300)
+    timestamp = time.strftime("%Y%m%d-%H%M%S")
+    plt.savefig(os.path.join(results_dir, f'component_counts_{timestamp}.png'), dpi=300)
     plt.close()
 else:
     plt.show()
