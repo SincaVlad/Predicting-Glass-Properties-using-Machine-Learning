@@ -33,10 +33,10 @@ In this project, I utilized a dataset of approximately 29,000 glass compositions
    - Run `model_training.py` to train the machine learning models.
 
 3. **Model Optimization**:
-   - Use `model_optimization.py` to optimize model hyperparameters.
+   - Use `model_optimization_evaluation.py` to optimize model hyperparameters and generate visualizations.
 
-4. **Model Evaluation**:
-   - Run `model_evaluation.py` to evaluate the model and generate visualizations.
+4. **Model Usage**:
+   - Run `model_usage.py` to use the model .
 
 ## Dataset
 
