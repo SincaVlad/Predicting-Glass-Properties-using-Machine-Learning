@@ -6,9 +6,10 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import joblib
 import time
+import os
 
 # Încărcarea datelor din fișierul CSV
-data = pd.read_csv('Glass Data.csv')
+data = pd.read_csv('data/glass_data.csv')
 
 # Pregătirea datelor: selectăm toate coloanele în afară de ultima pentru X (caracteristici) și ultima coloană pentru y (variabila de răspuns)
 X = data.iloc[:, :-1]
@@ -54,7 +55,8 @@ print(f"Test RMSE: {rmse:.2f}")
 print(f"Test R²: {r2:.2f}")
 
 # Salvarea modelului antrenat pentru utilizare ulterioară
-model_path = 'Optimized_RandomForest_Model.joblib'
+model_path = 'results/model_optimization_results/Optimized_RandomForest_Model.joblib'
+os.makedirs(os.path.dirname(model_path), exist_ok=True)
 joblib.dump(best_rf, model_path)
 
 # Generarea graficelor
@@ -67,7 +69,7 @@ plt.xlabel('Valori Reale')
 plt.ylabel('Predicții')
 plt.title(f'Graficul de eroare predicție vs. valori reale\nRMSE: {rmse:.2f}, R²: {r2:.2f}')
 plt.grid(True)
-plt.savefig('prediction_vs_actual.png')
+plt.savefig('results/model_optimization_results/prediction_vs_actual.png')
 plt.close()  # Închide figura pentru a elibera memoria
 
 # Curba de învățare (Learning Curve)
@@ -89,7 +91,7 @@ plt.ylabel('Acuratețe')
 plt.title('Curba de învățare')
 plt.legend(loc='best')
 plt.grid(True)
-plt.savefig('learning_curve.png')
+plt.savefig('results/model_optimization_results/learning_curve.png')
 plt.close()  # Închide figura pentru a elibera memoria
 
 # Grafic de importanță a caracteristicilor (Feature Importance)
@@ -104,7 +106,7 @@ plt.xticks(range(X_train.shape[1]), [feature_names[i] for i in indices], rotatio
 plt.xlabel('Caracteristică')
 plt.ylabel('Importanță')
 plt.grid(True)
-plt.savefig('feature_importance.png')
+plt.savefig('results/model_optimization_results/feature_importance.png')
 plt.close()  # Închide figura pentru a elibera memoria
 
 print("Graficele și modelul antrenat au fost salvate.")
