@@ -1,0 +1,26 @@
+﻿Scaler;Model;Mean MSE;Std MSE;Std MSE %; Mean R²; Std R²;Std R² %
+None;Linear Regression;4696,64;109,75;2,34;0,78;5,38E-03;0,69
+None;Decision Tree;1914,53;62,04;3,24;0,91;3,00E-03;0,33
+None;Random Forest;1082,56;46,36;4,28;0,95;1,82E-03;0,19
+None;SVR;4774,24;115,95;2,43;0,77;4,91E-03;0,64
+None;Gradient Boosting;3003,78;51,9;1,73;0,86;2,23E-03;0,26
+Standard Scaler;Linear Regression;4696,64;109,75;2,34;0,78;5,38E-03;0,69
+Standard Scaler;Decision Tree;1895,57;64,59;3,41;0,91;3,55E-03;0,39
+Standard Scaler;Random Forest;1087,05;48,41;4,45;0,95;1,84E-03;0,19
+Standard Scaler;SVR;4567,12;140,61;3,08;0,78;4,35E-03;0,56
+Standard Scaler;Gradient Boosting;2987,92;70,05;2,34;0,86;3,03E-03;0,35
+Robust Scaler;Linear Regression;4696,64;109,75;2,34;0,78;5,38E-03;0,69
+Robust Scaler;Decision Tree;1882,38;56,27;2,99;0,91;2,89E-03;0,32
+Robust Scaler;Random Forest;1083,2;40,43;3,73;0,95;1,53E-03;0,16
+Robust Scaler;SVR;7698,67;236,41;3,07;0,63;4,69E-03;0,74
+Robust Scaler;Gradient Boosting;2986,85;69,6;2,33;0,86;2,99E-03;0,35
+MinMax Scaler;Linear Regression;4696,64;109,75;2,34;0,78;5,38E-03;0,69
+MinMax Scaler;Decision Tree;1909,35;49,51;2,59;0,91;2,75E-03;0,3
+MinMax Scaler;Random Forest;1084,42;48,1;4,44;0,95;1,87E-03;0,2
+MinMax Scaler;SVR;4558,22;111,67;2,45;0,78;4,35E-03;0,56
+MinMax Scaler;Gradient Boosting;2992,63;71,61;2,39;0,86;3,22E-03;0,38
+Quantile Transformer;Linear Regression;6511,3;177,82;2,73;0,69;7,19E-03;1,04
+Quantile Transformer;Decision Tree;1907,86;82,65;4,33;0,91;4,02E-03;0,44
+Quantile Transformer;Random Forest;1067,47;39,11;3,66;0,95;1,44E-03;0,15
+Quantile Transformer;SVR;4981,55;171,15;3,44;0,76;6,31E-03;0,83
+Quantile Transformer;Gradient Boosting;3004,49;86,23;2,87;0,86;3,44E-03;0,4
