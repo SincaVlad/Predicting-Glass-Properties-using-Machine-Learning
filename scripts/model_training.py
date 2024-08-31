@@ -10,9 +10,10 @@ from sklearn.preprocessing import StandardScaler, RobustScaler, MinMaxScaler, Qu
 import matplotlib.pyplot as plt
 import joblib
 import time
+import os
 
 # Încărcarea datelor din fișierul CSV
-data = pd.read_csv('Glass Data.csv')
+data = pd.read_csv('data/glass_data.csv')
 
 # Pregătirea datelor
 X = data.iloc[:, :-1].values
@@ -42,6 +43,10 @@ kf = KFold(n_splits=5, shuffle=True, random_state=42)
 results = []
 start_time = time.time()
 
+# Crearea directorului de rezultate
+results_dir = 'results/model_training_results/'
+os.makedirs(results_dir, exist_ok=True)
+
 for scaler_name, scaler in scalers.items():
     X_scaled = X if scaler is None else scaler.fit_transform(X)
     for model_name, model in models.items():
@@ -68,14 +73,15 @@ for scaler_name, scaler in scalers.items():
         results.append([scaler_name, model_name, mean_mse, std_mse, std_mse_percent, mean_r2, std_r2, std_r2_percent])
         
         # Salvarea modelului
-        joblib.dump(model, f'{scaler_name}_{model_name}.joblib')
+        model_filename = f'{results_dir}{scaler_name}_{model_name}.joblib'
+        joblib.dump(model, model_filename)
 
 end_time = time.time()
 print(f"Total Time: {end_time - start_time:.2f} seconds")
 
 # Convertirea rezultatelor într-un DataFrame și salvarea acestora într-un fișier CSV
 df_results = pd.DataFrame(results, columns=['Scaler', 'Model', 'Mean MSE', 'Std MSE', 'Std MSE %', 'Mean R²', 'Std R²', 'Std R² %'])
-df_results.to_csv('model_performance.csv', index=False)
+df_results.to_csv(f'{results_dir}model_performance.csv', index=False)
 
 # Opțional, afișarea rezultatelor în consolă
 print(df_results)
