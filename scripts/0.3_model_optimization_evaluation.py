@@ -55,7 +55,7 @@ print(f"Test RMSE: {rmse:.2f}")
 print(f"Test R²: {r2:.2f}")
 
 # Salvarea modelului antrenat pentru utilizare ulterioară
-model_path = 'results/optimized_model/Optimized_RandomForest_Model.joblib'
+model_path = 'results/0.3_optimized_model/Optimized_RandomForest_Model.joblib'
 os.makedirs(os.path.dirname(model_path), exist_ok=True)
 joblib.dump(best_rf, model_path)
 
