@@ -15,7 +15,7 @@ except FileNotFoundError:
 # Variabila pentru salvarea graficelor
 save_plots = True  # Setează la False pentru a afișa graficele în loc să le salvezi
 
-# Crearea directorului pentru salvarea rezultatelor, dacă nu există
+# Crearea directorului de rezultate
 results_dir = 'results/0.1_data_exploration_results/'
 os.makedirs(results_dir, exist_ok=True)
 
