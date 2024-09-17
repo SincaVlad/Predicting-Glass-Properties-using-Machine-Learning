@@ -4,27 +4,19 @@ import seaborn as sns
 import os
 import time
 
-# Încărcarea setului de date din locația specificată
-data_path = 'data/glass_data.csv'
-try:
-    df = pd.read_csv(data_path)
-except FileNotFoundError:
-    print(f"Eroare: Fișierul '{data_path}' nu a fost găsit.")
-    raise
+# Încărcarea datelor din fișierul CSV | Loading data from the CSV file
+data = pd.read_csv('data/glass_data.csv')
 
-# Variabila pentru salvarea graficelor
-save_plots = True  # Setează la False pentru a afișa graficele în loc să le salvezi
-
-# Crearea directorului de rezultate
+# Crearea directorului de rezultate | Creating the results directory
 results_dir = 'results/0.1_data_exploration_results/'
 os.makedirs(results_dir, exist_ok=True)
 
-# Setarea stilului grafic
+# Setarea stilului grafic | Setting the plot style
 plt.style.use('ggplot')
 
-# Generarea histogramelor pentru fiecare componentă chimică
-for column in df.columns[:-1]:  # Exclude Tg
-    data = df[df[column] != 0][column]  # Excluderea valorilor de 0 din calcul
+# Generarea histogramelor pentru fiecare componentă chimică | Generating histograms for each chemical component
+for column in df.columns[:-1]:  # Exclude Tg | Exclude Tg
+    data = df[df[column] != 0][column]  # Excluderea valorilor de 0 din calcul | Excluding zero values from the calculation
     mean = data.mean()
 
     plt.figure(figsize=(14, 6))
@@ -38,15 +30,13 @@ for column in df.columns[:-1]:  # Exclude Tg
     plt.xlim(0, 100)
     plt.legend()
     plt.tight_layout()
+    
+    timestamp = time.strftime("%Y%m%d-%H%M%S")
+    plt.savefig(os.path.join(results_dir, f'{column[3:]}_Histograma_{timestamp}.png'), dpi=300)
+    plt.close()
 
-    if save_plots:
-        timestamp = time.strftime("%Y%m%d-%H%M%S")
-        plt.savefig(os.path.join(results_dir, f'{column[3:]}_Histograma_{timestamp}.png'), dpi=300)
-        plt.close()
-    else:
-        plt.show()
 
-# Grafic distribuție Tg
+# Grafic distribuție Tg | Tg distribution plot
 mean_tg = df['TG'].mean()
 
 plt.figure(figsize=(14, 6))
@@ -60,14 +50,11 @@ plt.xlim(0, None)
 plt.legend()
 plt.tight_layout()
 
-if save_plots:
-    timestamp = time.strftime("%Y%m%d-%H%M%S")
-    plt.savefig(os.path.join(results_dir, f'TG_Histograma_Standard_{timestamp}.png'), dpi=300)
-    plt.close()
-else:
-    plt.show()
+timestamp = time.strftime("%Y%m%d-%H%M%S")
+plt.savefig(os.path.join(results_dir, f'TG_Histograma_Standard_{timestamp}.png'), dpi=300)
+plt.close()
 
-# Graficul de tip bară pentru numărul de compoziții
+# Graficul de tip bară pentru numărul de compoziții | Bar plot for the number of compositions
 component_counts = (df.iloc[:, :-1] != 0).sum().sort_values(ascending=False)
 
 plt.figure(figsize=(14, 8))
@@ -79,9 +66,6 @@ plt.xlabel('Componentă')
 plt.ylabel('Număr de compoziții')
 plt.tight_layout()
 
-if save_plots:
-    timestamp = time.strftime("%Y%m%d-%H%M%S")
-    plt.savefig(os.path.join(results_dir, f'component_counts_{timestamp}.png'), dpi=300)
-    plt.close()
-else:
-    plt.show()
+timestamp = time.strftime("%Y%m%d-%H%M%S")
+plt.savefig(os.path.join(results_dir, f'component_counts_{timestamp}.png'), dpi=300)
+plt.close()
