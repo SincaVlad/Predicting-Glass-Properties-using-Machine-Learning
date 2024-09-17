@@ -21,7 +21,7 @@ y = data.iloc[:, -1].values
 
 # Creating the results and models directories
 results_dir = 'results/0.2_model_training_results/'
-models_dir = 'results/0.2_model_training_models/'
+models_dir = 'results/0.2_trained_models/'
 os.makedirs(results_dir, exist_ok=True)
 os.makedirs(models_dir, exist_ok=True)
 
