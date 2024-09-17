@@ -44,7 +44,7 @@ results = []
 start_time = time.time()
 
 # Crearea directorului de rezultate
-results_dir = 'results/model_training_results/'
+results_dir = 'results/0.2_model_training_results/'
 os.makedirs(results_dir, exist_ok=True)
 
 for scaler_name, scaler in scalers.items():
