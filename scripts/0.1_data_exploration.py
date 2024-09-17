@@ -4,19 +4,19 @@ import seaborn as sns
 import os
 import time
 
-# Încărcarea datelor din fișierul CSV | Loading data from the CSV file
+# Loading data from the CSV file
 data = pd.read_csv('data/glass_data.csv')
 
-# Crearea directorului de rezultate | Creating the results directory
+# Creating the results and models directories
 results_dir = 'results/0.1_data_exploration_results/'
 os.makedirs(results_dir, exist_ok=True)
 
-# Setarea stilului grafic | Setting the plot style
+# Setting the plot style
 plt.style.use('ggplot')
 
-# Generarea histogramelor pentru fiecare componentă chimică | Generating histograms for each chemical component
-for column in df.columns[:-1]:  # Exclude Tg | Exclude Tg
-    data = df[df[column] != 0][column]  # Excluderea valorilor de 0 din calcul | Excluding zero values from the calculation
+# Generating histograms for each chemical component
+for column in df.columns[:-1]:  # Exclude Tg
+    data = df[df[column] != 0][column]  # Excluding zero values from the calculation
     mean = data.mean()
 
     plt.figure(figsize=(14, 6))
@@ -36,7 +36,7 @@ for column in df.columns[:-1]:  # Exclude Tg | Exclude Tg
     plt.close()
 
 
-# Grafic distribuție Tg | Tg distribution plot
+# Tg distribution plot
 mean_tg = df['TG'].mean()
 
 plt.figure(figsize=(14, 6))
@@ -54,7 +54,7 @@ timestamp = time.strftime("%Y%m%d-%H%M%S")
 plt.savefig(os.path.join(results_dir, f'TG_Histograma_Standard_{timestamp}.png'), dpi=300)
 plt.close()
 
-# Graficul de tip bară pentru numărul de compoziții | Bar plot for the number of compositions
+# Bar plot for the number of compositions
 component_counts = (df.iloc[:, :-1] != 0).sum().sort_values(ascending=False)
 
 plt.figure(figsize=(14, 8))
