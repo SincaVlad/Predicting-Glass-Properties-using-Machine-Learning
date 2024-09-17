@@ -21,7 +21,7 @@ For more details on the SciGlass project and to access the original data, please
 
 ## Processed Data Used in the Project
 
-In this project, the SciGlass data has been processed to create datasets suitable for training and testing machine learning models. The processed data files, available in CSV and Excel formats, along with the preprocessing scripts, are included in this repository.
+In this project, the SciGlass data has been processed to create datasets suitable for training and testing machine learning models. The processed data file available in CSV is included in this repository.
 
 ### Purpose of Use
 
