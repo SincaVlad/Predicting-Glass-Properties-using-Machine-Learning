@@ -13,11 +13,11 @@ The project utilizes a dataset of approximately 29,000 glass compositions from t
     - `glass_data.csv`: Processed dataset for training and evaluation.
     - `original_data_reference.md`: Reference to the SciGlass database and instructions for accessing it.
   - **results/**: 
-    - `0.1_data_exploration_results/`: Results from data exploration (to be uploaded).
+    - `0.1_data_exploration_results/`: Results from data exploration.
     - `0.2_model_training_results/`: Contains `model_performance.csv` with model performance metrics.
-    - `0.2_trained_models/`: Trained models (to be uploaded).
+    - `0.2_trained_models/`: Trained models.
     - `0.3_model_optimization_results/`: Contains `feature_importance.png`, `learning_curve.png`, and `prediction_vs_actual.png`.
-    - `0.3_optimized_model/`: Contains the optimized Random Forest model `Optimized_RandomForest_Model.joblib` (to be uploaded).
+    - `0.3_optimized_model/`: Contains the optimized Random Forest model `Optimized_RandomForest_Model.joblib`.
   - **utils/**: Utility scripts for various tasks.
     - `model_evaluation_graph.py`: Script for generating model evaluation graphs.
     - `model_training_graph.py`: Script for visualizing model training results.
